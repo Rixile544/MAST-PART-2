@@ -1,75 +1,159 @@
-# @react-native/community-cli-plugin
+# NEW MAST – Chef Menu Management App
 
-> This is an internal dependency of React Native. **Please don't depend on it directly.**
+A cross-platform React Native application developed for **Christoffel**, a private chef renowned for his personalized culinary experiences.  
+The app allows the chef to manage dynamic menus, add dishes, and display them beautifully for clients.
 
-CLI entry points supporting core React Native development features.
+---
 
-Formerly [@react-native-community/cli-plugin-metro](https://www.npmjs.com/package/@react-native-community/cli-plugin-metro).
+##  Features
+- Add new menu items (dish name, description, course, and price)
+- Choose from predefined courses (Starters, Mains, Desserts)
+- View the full menu on the home screen
+- Display total number of menu items
+- Elegant beige, dark brown, and light brown theme
+- Built with **TypeScript** and **React Native**
+- Navigation between screens using React Navigation
+- Animations for improved user experience
 
-## Commands
+---
 
-### `start`
+##  Tech Stack
+- **React Native** `0.81.4`
+- **React** `19.1.0`
+- **Expo** `^51.0.0`
+- **TypeScript** `^5.0.0`
+- **React Navigation** `7.1.17`
+- **React Native Reanimated** `4.1.0`
+- **React Native Screens**, **Safe Area Context**, **Gesture Handler**
+- **@react-native-picker/picker** for course selection
 
-Start the React Native development server.
+---
 
-#### Usage
+## Installation Guide
 
-```sh
-npx @react-native-community/cli start [options]
-```
+### 1️ Clone the project
+```bash
+git clone https://github.com/YOUR_USERNAME/NEW-MAST.git
+cd NEW-MAST
+2️ Install dependencies
 
-#### Options
+This ensures React, React DOM, and React Native use matching versions.
 
-| Option | Description |
-| - | - |
-| `--port <number>` | Set the server port. |
-| `--host <string>` | Set the server host. |
-| `--projectRoot <path>` | Set the path to the project root. |
-| `--watchFolders <list>` | Specify additional folders to be added to the watch list. |
-| `--assetPlugins <list>` | Specify additional asset plugins. |
-| `--sourceExts <list>` | Specify additional source extensions to bundle. |
-| `--max-workers <number>` | Set the maximum number of workers the worker-pool will spawn for transforming files. Defaults to the number of the cores available on your machine. |
-| `--transformer <string>` | Specify a custom transformer. |
-| `--reset-cache` | Remove cached files. |
-| `--custom-log-reporter-path <string>` | Specify a module path exporting a replacement for `TerminalReporter`. |
-| `--https` | Enable HTTPS connections. |
-| `--key <path>`| Specify path to a custom SSL key. |
-| `--cert <path>` | Specify path to a custom SSL cert. |
-| `--config <string>` | Path to the CLI configuration file. |
-| `--no-interactive` | Disable interactive mode. |
-| `--client-logs` | **[Deprecated]** Enable plain text JavaScript log streaming for all connected apps. |
+rd /s /q node_modules
+del package-lock.json
+npm install
 
-### `bundle`
+3️ Verify React versions
 
-Build the bundle for the provided JavaScript entry file.
+Make sure both are the same:
 
-#### Usage
+npm list react react-dom react-native
 
-```sh
-npx @react-native-community/cli bundle --entry-file <path> [options]
-```
 
-#### Options
+Expected output:
 
-| Option | Description |
-| - | - |
-| `--entry-file <path>` | Set the path to the root JavaScript entry file. |
-| `--platform <string>` | Set the target platform (either `"android"` or `"ios"`). Defaults to `"ios"`. |
-| `--transformer <string>` | Specify a custom transformer. |
-| `--dev [boolean]` | If `false`, warnings are disabled and the bundle is minified. Defaults to `true`. |
-| `--minify [boolean]` | Allows overriding whether bundle is minified. Defaults to `false` if `--dev` is set. Disabling minification can be useful for speeding up production builds for testing purposes. |
-| `--bundle-output <string>` | Specify the path to store the resulting bundle. |
-| `--bundle-encoding <string>` | Specify the encoding for writing the bundle (<https://nodejs.org/api/buffer.html#buffer_buffer>). |
-| `--resolver-option <string...>` | Custom resolver options of the form key=value. URL-encoded. May be specified multiple times. |
-| `--sourcemap-output <string>` | Specify the path to store the source map file for the resulting bundle. |
-| `--sourcemap-sources-root <string>` | Set the root path for source map entries. |
-| `--sourcemap-use-absolute-path` | Report `SourceMapURL` using its full path. |
-| `--max-workers <number>` | Set the maximum number of workers the worker-pool will spawn for transforming files. Defaults to the number of the cores available on your machine. |
-| `--assets-dest <string>` | Specify the directory path for storing assets referenced in the bundle. |
-| `--reset-cache` | Remove cached files. |
-| `--read-global-cache` | Attempt to fetch transformed JS code from the global cache, if configured. Defaults to `false`. |
-| `--config <string>` | Path to the CLI configuration file. |
+react@19.1.0
+react-dom@19.1.0
+react-native@0.81.4
 
-## Contributing
 
-Changes to this package can be made locally and tested against the `rn-tester` app, per the [Contributing guide](https://reactnative.dev/contributing/overview#contributing-code). During development, this package is automatically run from source with no build step.
+If not, reinstall them manually:
+
+npm install react@19.1.0 react-dom@19.1.0 --force
+
+ Project Dependencies
+npm install \
+expo@^51.0.0 \
+expo-status-bar@~1.12.0 \
+react@19.1.0 \
+react-dom@19.1.0 \
+react-native@0.81.4 \
+@react-navigation/native@^7.1.17 \
+@react-navigation/native-stack@^7.3.26 \
+react-native-gesture-handler@~2.28.0 \
+react-native-reanimated@~4.1.0 \
+react-native-safe-area-context@5.6.1 \
+react-native-screens@4.16.0 \
+@react-native-picker/picker@^2.8.1 \
+typescript@^5.0.0
+
+ How to Run the App
+npx expo start -c
+
+
+Then:
+
+Press a to launch on Android
+
+Press w to open in web
+
+Press r to reload the project
+
+🧩 Folder Structure
+NEW-MAST/
+│
+├── src/
+│   ├── navigation/
+│   │   └── AppNavigator.tsx
+│   ├── screens/
+│   │   ├── HomeScreen.tsx
+│   │   ├── AddMenuScreen.tsx
+│   │   ├── MenuDetailScreen.tsx
+│   │   └── AboutScreen.tsx
+│   ├── theme/
+│   │   └── colors.ts
+│   └── types/
+│       └── types.ts
+│
+├── App.tsx
+├── package.json
+└── README.md
+
+ Troubleshooting
+ Error: React and React Native versions mismatch
+
+Fix:
+
+npm install react@19.1.0 react-dom@19.1.0 --force
+
+ Error: Nested NavigationContainer
+
+Fix:
+Ensure only one <NavigationContainer> exists in your app.
+Your App.tsx should wrap everything inside a single container.
+
+ Expo not found
+
+Run:
+
+npm install expo --force
+
+ Author
+
+Rixile Ndlovu
+rixilendlovu319@gmail.com
+
+ The Independent Institute of Education (Pty) Ltd, 2025
+
+ License
+
+This project is for educational purposes only under the supervision of The Independent Institute of Education (Pty) Ltd (IIE).
+
+ References (Harvard Anglia Style)
+
+Facebook Inc., 2025. React Native Documentation. [online] Available at: https://reactnative.dev/docs
+ [Accessed 6 October 2025].
+
+Expo Dev Team, 2025. Expo Documentation. [online] Available at: https://docs.expo.dev/
+ [Accessed 6 October 2025].
+
+React Navigation Contributors, 2025. React Navigation Documentation. [online] Available at: https://reactnavigation.org/docs/getting-started
+ [Accessed 6 October 2025].
+
+TypeScript Team, 2025. TypeScript Handbook. [online] Available at: https://www.typescriptlang.org/docs/
+ [Accessed 6 October 2025].
+
+npm Inc., 2025. npm Documentation. [online] Available at: https://docs.npmjs.com/
+ [Accessed 6 October 2025].
+
+The Independent Institute of Education (IIE), 2025. Academic Referencing Guidelines: Harvard Anglia Style. Johannesburg: IIE.
